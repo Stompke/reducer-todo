@@ -20,6 +20,9 @@ const Form = props => {
                 onChange={onChange}
             />
             <button onClick={() => props.dispatch({type: 'ADD_TODO', payload: taskName}) }>Add New TODO</button>
+            <div>
+                <button onClick={() => props.dispatch({type: 'CLEAR_COMPLETED'})}>Clear Completed</button>
+            </div>
         </div>
     )
 }
