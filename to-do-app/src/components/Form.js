@@ -2,14 +2,11 @@ import React, { useState, useReducer } from 'react';
 
 
 //Reducers
-import { toDoReducer, initialState } from '../reducers/toDoReducer';
+// import { toDoReducer, initialState } from '../reducers/toDoReducer';
 
-const Form = () => {
-
+const Form = props => {
     const [taskName, setTaskName ] = useState('');
-
-    const [state, dispatch] = useReducer(toDoReducer, initialState);
-
+    // const [state, dispatch] = useReducer(toDoReducer, initialState);
 
     const onChange = e => {
         setTaskName(e.target.value);
@@ -17,17 +14,13 @@ const Form = () => {
 
     return (
         <div>
-            <h1>Form</h1>
-
             <input
                 value={taskName}
                 type='text'
                 onChange={onChange}
             />
-            <button onClick={() => dispatch({type: 'ADD_TODO', payload: taskName}) }>Add New TODO</button>
+            <button onClick={() => props.dispatch({type: 'ADD_TODO', payload: taskName}) }>Add New TODO</button>
         </div>
-
-
     )
 }
 export default Form;

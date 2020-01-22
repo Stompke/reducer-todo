@@ -4,16 +4,18 @@ import React, { useReducer } from 'react';
 import ToDo from './ToDo';
 
 //Reducers
-import { toDoReducer, initialState } from '../reducers/toDoReducer';
+// import { toDoReducer, initialState } from '../reducers/toDoReducer';
 
-const ToDoList = () => {
+const ToDoList = props => {
 
-    const [state, dispatch] = useReducer(toDoReducer, initialState);
+    // const [state, dispatch] = useReducer(toDoReducer, initialState);
+
+    console.log(props.state)
 
     return (
         <div>
-            {/* {state.map(item => <Todo />)} */}
-            <ToDo key={state.id} item={state.item} />
+            {props.state.map(todo => <ToDo dispatch={props.dispatch} key={todo.id} id={todo.id} completed={todo.completed} task={todo.item} />)}
+        
         </div>
     )
 } 

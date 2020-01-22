@@ -62,13 +62,13 @@ You get to choose how you want to set up your components. Please don't just do t
 - Using the `reducer` hook, set up state in your component. Think about what you'll need in order to use the reducer hook, and think about what it returns.
 - Now render your list of todos from your reducer in your app
 
-### [] STEP 3 - Adding todos
+### [✅] STEP 3 - Adding todos
 
 - Build a form to add todos to your list
 - Build a function that will dispatch an action to add a new todo
 - Write the `case` in your reducer for adding a todo (You can create a unique id with `new Date()`)
 
-### [] STEP 4 - Toggle the completed field
+### [✅] STEP 4 - Toggle the completed field
 
 - Build a function that will dispatch an action to toggle a todo's completed field
 - Invoke this new function when you click on a todo

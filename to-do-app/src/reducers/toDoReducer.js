@@ -7,24 +7,12 @@ export const initialState = [
     completed: false,
     id: 3892987589
   } 
+
 ]
 
 export const toDoReducer = (state, action) => {
 
-    // if (action.type === 'ADD_TODO') {
-    //     console.log('dispatch ADD_TODO')
-    //     return [
-    //         ...state,
-    //         {
-    //             item: action.payload,
-    //             completed: false,
-    //             id: Date.now()
-    //         }
-
-    //     ]
-        
-    // }
-
+    
     switch( action.type ) {
         case 'ADD_TODO':
             return [
@@ -36,6 +24,18 @@ export const toDoReducer = (state, action) => {
                 }
 
             ];
+        case 'TOGGLE_COMPLETED':
+            return (state.map(item => {
+                if (item.id === action.payload) {
+                    return {
+                        ...item,
+                        completed: !item.completed
+                    }
+                } else {
+                    return item
+                }
+            })
+                );
         default:
             return state;
     }
